@@ -12,6 +12,8 @@
     <button @click="cambiarValoresPadre">Cambiar valores padre</button>
     <h3 v-if="isVisiblemessageHijo">{{ messageHijo }}</h3>
     <button v-on:click="toggleVisibilityHijo">Toogle Visibility</button>
+    <!-- Escribo texto y cambio el valor de esta variable añado o quito -->
+    <input type="text" v-model="messageHijo">
   </div>
 </template>
 
