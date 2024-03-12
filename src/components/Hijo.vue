@@ -1,28 +1,32 @@
 <template>
   <div>
-    <!-- Muestra el título "Hijo" -->
+    <h1>Padre:</h1>
+    <h2>Nombre: {{ nombrePadre }}</h2>
+    <h2>Edad: {{ edadPadre }}</h2>
     <h1>Hijo:</h1>
-    <!-- Muestra el nombre y edad recibidos como propiedades -->
-    <h2>Te llamas {{ nombre }} y tienes {{ edad }} años.</h2>
-    <!-- Botón para llamar a la función "enviar" -->
-    <button @click="enviar">Cambiar valores</button>
-    </div>
+    <h2>Nombre: {{ nombre }}</h2>
+    <h2>Edad: {{ edad }}</h2>
+    <button @click="cambiarValoresHijo">Cambiar valores hijo</button>
+    <button @click="cambiarValoresPadre">Cambiar valores padre</button>
+  </div>
 </template>
 
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-// Importa la función "defineEmits" para definir eventos personalizados
-const emit = defineEmits(['modificar'])
-// Función para emitir el evento "modificar" con nuevos valores
-const enviar = () => {
-  emit('modificar', 'VUE', 9)
-}
+import { ref } from 'vue';
 
-// Define las propiedades nombre y edad que este componente espera recibir
-const props = defineProps({
-  nombre: String,
-  edad: Number,
-})
+const nombre = ref('JAB');
+const edad = ref(18);
+
+const nombrePadre = ref('Nombre inicial padre');
+const edadPadre = ref(30);
+
+const cambiarValoresHijo = () => {
+  nombre.value = 'Nuevo nombre hijo';
+  edad.value = 20;
+};
+
+const cambiarValoresPadre = () => {
+  nombrePadre.value = 'Nuevo nombre padre';
+  edadPadre.value = 40;
+};
 </script>
-
-<style scoped></style>
