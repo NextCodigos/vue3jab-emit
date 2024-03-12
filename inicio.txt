@@ -1,0 +1,254 @@
+  npm create vue@latest
+  cd vue3jab
+  npm install
+  npm run dev
+
+/////////////////////////////////////////
+
+ejemplo 1:
+
+Metodo Emit 
+
+App.vue
+
+<template>
+<div>
+  <h1>Padre:</h1>
+  <HijoVue :nombre="nombre" :edad="edad"/>
+</div>
+</template>
+
+
+<script setup>
+  // import HelloWorld from './components/HelloWorld.vue'
+  import { ref } from 'vue'
+  import HijoVue from './components/Hijo.vue'
+
+  connst nombre = ref('JAB');
+  const edad=ref(18);
+</script>
+
+<style scoped>
+
+</style>
+
+
+/////////////
+
+Hijo.vue
+
+<template>
+  <div>
+    <!-- Muestra el título "Hijo" -->
+    <h1>Hijo:</h1>
+    <!-- Muestra el nombre y edad recibidos como propiedades -->
+    <h2>Te llamas {{ nombre }} y tienes {{ edad }} años.</h2>
+    <!-- Botón para llamar a la función "enviar" -->
+    <button @click="enviar">Cambiar valores</button>
+    </div>
+</template>
+
+<script setup>
+// import HelloWorld from './components/HelloWorld.vue'
+// Importa la función "defineEmits" para definir eventos personalizados
+const emit = defineEmits(['modificar'])
+// Función para emitir el evento "modificar" con nuevos valores
+const enviar = () => {
+  emit('modificar', 'VUE', 9)
+}
+
+// Define las propiedades nombre y edad que este componente espera recibir
+const props = defineProps({
+  nombre: String,
+  edad: Number,
+})
+</script>
+
+<style scoped></style>
+
+// Este archivo es un componente único de Vue que define la plantilla, configuración de script y estilos con ámbito para el componente HijoVue
+// La sección de configuración de script importa las funciones defineEmits y defineProps de Vue
+// Define una función enviar que emite un evento 'modificar' con los valores 'VUE' y 9
+// También define props para nombre y edad utilizando defineProps
+// La sección de plantilla renderiza el componente HijoVue con las props nombre y edad, y un botón que activa la función enviar
+// La sección de estilos con ámbito contiene estilos que solo se aplican a este componente
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+App.vue
+
+<template>
+   <div>
+      <!-- Muestra el título "Padre" -->
+      <h1>Padre:</h1>
+      <!-- Llama al componente HijoVue y pasa las propiedades nombre y edad, y maneja el evento modificar -->
+      
+    <HijoVue :nombre="nombre" :edad="edad" @modificar="cambiarValor" />
+     
+  </div>
+</template>
+
+<script setup>
+// import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import HijoVue from './components/Hijo.vue'
+
+// Función para cambiar el valor de nombre y edad
+const cambiarValor = (valor1, valor2) => {
+  nombre.value = valor1;
+  edad.value = valor2
+}
+
+// Define las variables reactivas nombre y edad
+const nombre = ref('JAB');
+const edad = ref(18);
+</script>
+
+<style scoped></style>
+
+MINUTO 9
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+2 Metodo inyection:
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////
