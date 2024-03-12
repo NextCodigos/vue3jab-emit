@@ -11,7 +11,7 @@
     <button @click="cambiarValoresHijo">Cambiar valores hijo</button>
     <button @click="cambiarValoresPadre">Cambiar valores padre</button>
     <h3 v-if="isVisiblemessageHijo">{{ messageHijo }}</h3>
-    <button v-on:click="$event => isVisiblemessageHijo = !isVisiblemessageHijo">Toogle Visibility</button>
+    <button v-on:click="toggleVisibilityHijo">Toogle Visibility</button>
   </div>
 </template>
 
@@ -69,6 +69,12 @@ const isVisiblemessagePadre = ref(true);
 
 // Definir variable reactiva para controlar la visibilidad del hijo
 const isVisiblemessageHijo = ref(true);
+
+// Función para alternar la visibilidad del mensaje del hijo
+const toggleVisibilityHijo = () => {
+  isVisiblemessageHijo.value = !isVisiblemessageHijo.value;
+};
+
 
 // Código listo para ser utilizado
 
