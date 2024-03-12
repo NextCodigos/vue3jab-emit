@@ -60,8 +60,8 @@ const cambiarValoresPadre = () => {
   // Siempre establecer showPadre como verdadero al cambiar los valores del padre
   showPadre.value = true;
 };
-const messagePadre = ref('initial value');
-const messageHijo = ref('initial value');
+const messagePadre = ref('initial value Padre');
+const messageHijo = ref('initial value Hijo');
 
 
 // Definir variable reactiva para controlar la visibilidad del padre
